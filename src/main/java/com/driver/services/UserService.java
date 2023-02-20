@@ -1,9 +1,12 @@
 package com.driver.services;
 
-import com.driver.models.User;
+import com.driver.models.*;
 import com.driver.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -11,13 +14,13 @@ public class UserService {
     UserRepository userRepository3;
 
     public User createUser(String username, String password){
-            User user = new User();
-            user.setFirstName("Sample");
-            user.setLastName("Name");
-            user.setUsername(username);
-            user.setPassword(password);
-            userRepository3.save(user);
-            return user;
+        User user = new User();
+        user.setFirstName("test");
+        user.setLastName("test");
+        user.setUsername(username);
+        user.setPassword(password);
+        userRepository3.save(user);
+        return user;
 
     }
 
@@ -27,9 +30,9 @@ public class UserService {
     }
 
     public User updateUser(Integer id, String password){
-           User user = userRepository3.findById(id).get();
-           user.setPassword(password);
-            userRepository3.save(user);
-           return user;
+        User user = userRepository3.findById(id).get();
+        user.setPassword(password);
+        userRepository3.save(user);
+        return user;
     }
 }

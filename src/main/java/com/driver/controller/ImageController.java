@@ -30,7 +30,7 @@ public class ImageController {
     public ResponseEntity<String> deleteImage(@PathVariable int id) {
         // delete image using deleteById
         imageService.deleteImage(id);
-        return new ResponseEntity<>("deleted",HttpStatus.OK);
+        return new ResponseEntity<>("Deleted",HttpStatus.OK);
     }
 }
 
